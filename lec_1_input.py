@@ -1,2 +1,6 @@
 a=input("a=")
 print(a)
+print(type(a))
+a=int(input("a="))
+print(a)
+print(type(a))

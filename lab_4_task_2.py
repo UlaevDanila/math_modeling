@@ -1,10 +1,10 @@
 import numpy as np 
 
 def sr(a):
-  b=0
+  b=1
   for i in range(0,len(a)):
-    b=b+a[i]
-  print(b/len(a))
+    b=b*a[i]
+  print(b)
 
 b=np.zeros(6)
 

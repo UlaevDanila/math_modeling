@@ -1,27 +1,26 @@
 import numpy as np 
 
 a=np.zeros(5)
-q=np.zeros(5)
+q=np.zeros(4)
 
 for i in range(0,4):
-  print("Введите значение")
-  a[i]=int(input())
+  print('Введите значение')
+  q[i]=int(input())
 
+q=tuple(q)
 
-q=tuple(a)
+print('Введите элемент')
+r=int(input())
+print("Введите его номер")
+w=int(input())
 
 print(q)
 
-print("Введите число")
-b=int(input())
+for j in range(0,w-1,1):
+  a[j]=q[j]
+a[w-1]=r
 
-print("Введите его позицию")
-c=int(input())
-
-for i in range(c-1,4):
-  a[c-1]=b
-  a[i-1]=q[i]
-  if i==4 and c==5:
-    a[c]=b
+for i in range(w,5):
+  a[i]=q[i-1]
 
 print(a)

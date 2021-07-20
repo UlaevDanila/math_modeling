@@ -3,18 +3,12 @@ import numpy as np
 
 def stairs():
     n = int(input("Введите значение n "))
-    x = np.linspace(-10, 10, 100)
+    x = np.linspace(-10, n, 1000)
     y = np.zeros([len(x)])
-    N = np.linspace(0, n, n+1)
-    k = len(x)/n
-    round(k)
-    a = 0
-    i = 0
-    while a != len(x):
-        while i*k>a:
-            y[a] = N[i]
-            a = a + 1
-        k = k+1
+    for j in range (0, n+1, 1):
+        for i in range(0, len(x), 1):
+            if x[i]>j and x[i]>j+1:
+                y[i] = j
     plt.plot(x,y)
     plt.show()
 

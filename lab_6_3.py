@@ -1,7 +1,7 @@
 import matplotlib.pyplot as plt
 import numpy as np
 
-def circle(r = 10):
+def circle(r=10):
     n = int(input("Введите число точек "))
     x = np.linspace(-2*r,2*r,n)
     y = np.linspace(-2*r,2*r,n)
@@ -17,9 +17,9 @@ def ellipse():
     x = np.linspace(-a,a,n)
     y = np.linspace(-b,b,n)
     X,Y = np.meshgrid(x, y)
-    fxy = X**2/a + Y**2/b
-    plt.contour(X, Y, fxy)
+    fxy = X**2/a + Y**2/b - 1
+    plt.contour(X, Y, fxy, levels=[0])
     plt.show()
 
-circle()
+#circle()
 ellipse()

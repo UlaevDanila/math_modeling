@@ -14,7 +14,7 @@ for i in range(0, len(a), 1):
   if a[i] > 0:
     root = a 
 
-x = np.linspace(-2*r, root, 3)
+x = np.linspace(-r, root, 3)
 y = np.zeros([len(x)])
 
 for i in range(0, len(y), 1):

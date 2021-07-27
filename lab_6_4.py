@@ -1,6 +1,6 @@
 import matplotlib.pyplot as plt
 import numpy as np
-from sympy import symbols
+#from sympy import symbols
 
 def lspiral():
     f = np.arange(0, np.pi*8, np.pi/100, float)

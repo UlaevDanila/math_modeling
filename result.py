@@ -32,15 +32,16 @@ fxy = x**2 + y**2 - r**2
 l = r*p
 fx = fxy.subs(y,l)
 a = solve(fx,x)
-q = a[0]
-y2 = l
+x2 = [float(a[0]),x1]
+y2 = [l,y1]
 
 k = int(input("Введите число точек "))
 x3 = np.linspace(-2*r,2*r,k)
 y3 = np.linspace(-2*r,2*r,k)
 X,Y = np.meshgrid(x3, y3)
 fxy= X**2 + Y**2
+plt.axis('equal')
 plt.contour(X, Y, fxy, levels=[r**2])
-plt.plot([-2*r, q],[l,l])
-plt.plot([q, x1],[l,y1])
+plt.plot([-2*r, x2[0]],[l,l])
+plt.plot(x2, y2)
 plt.show()

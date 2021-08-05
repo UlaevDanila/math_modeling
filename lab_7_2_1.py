@@ -19,6 +19,6 @@ def update(frames):
   anim_object.set_data(xdata, ydata)
   return anim_object,
 
-ani = FuncAnimation(fig, update, frames = np.arange(0, 12*np.pi, 0.01), interval = 10)
+ani = FuncAnimation(fig, update, frames = np.arange(0, 12*np.pi, 0.1), interval = 10)
 
 ani.save('lab_7_2_1.gif')

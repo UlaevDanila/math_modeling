@@ -1,4 +1,4 @@
-import matplotlib.pyplot as plt
+aimport matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 import numpy as np
 

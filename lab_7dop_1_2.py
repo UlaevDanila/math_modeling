@@ -3,21 +3,34 @@ import matplotlib.pyplot as plt
 import numpy as np
 
 fig, ax = plt.subplots()
-ball, = plt.plot([], [], 'o', color = 'r', label = 'Ball')
+ball, = plt.plot([], [], 'o', color='r', label='Ball')
 
-def astroida_move(r, angel_vel, time):
-    alpha = angel_vel*(np.pi/180)*time
-    x = r*(np.cos(alpha))**3
-    y = r*(np.sin(alpha))**3
+def astroida_move(R, angle_vel, time):
+    alpha = angle_vel * (np.pi/180) * time
+    x = R*(alpha - (np.sin(alpha)))
+    y = R*(1-(np.cos(alpha)))
     return x, y
 
-edge = 4
-plt.axis('equal')
-ax.set_xlim(0 ,15*edge)
-ax.set_ylim(-3*edge, 3*edge)
+edge = 20
+
+ax.set_xlim(-edge, edge)
+ax.set_ylim(-edge, edge)
 
 def animate(i):
-    ball.set_data(astroida_move(r = 3, angel_vel = 1, time = i))
+    ball.set_data(cicloida_move(R=2, angle_vel=10, time=i))
 
-ani = animation.FuncAnimation(fig, animate, frames = 180, interval = 30, blit = True, repeat = False)
-ani.save = ("lab_7dop_1_1.gif")
+
+ani = animation.FuncAnimation(fig,
+                              animate,
+                              frames=360,
+                              interval=120
+                              )
+
+R = 2
+x = R*(np.linspace(0,4*np.pi,100) - (np.sin(np.linspace(0,4*np.pi,100))))
+y = R*(1-(np.cos(np.linspace(0,4*np.pi,100))))
+
+plt.axis('equal')
+plt.plot(x,y)
+
+ani.save('lab_7dop_1_1.gif')

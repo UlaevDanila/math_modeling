@@ -2,13 +2,15 @@ import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
+plt.axis("equal")
+
 fig, ax = plt.subplots() 
 
 anim_object, = plt.plot([], [], '-', lw=2) 
 xdata, ydata = [], [] 
 
-ax.set_xlim(-25, 25) 
-ax.set_ylim(-25, 25) 
+ax.set_xlim(-5, 5) 
+ax.set_ylim(-5, 5) 
 
 x1 = [2, 2 ,-2, -2, 2]
 y1 = [2, -2, -2, 2, 2]
@@ -20,6 +22,7 @@ def update(frame):
     Y = y*np.cos(frame) + x*np.sin(frame)
     anim_object.set_data(X, Y)
     return anim_object
+
 
 ani = FuncAnimation(fig, 
                     update, 
